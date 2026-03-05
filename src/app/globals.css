@@ -20,12 +20,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+/* cmdk overrides */
+[cmdk-dialog] {
+  z-index: 50;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+[cmdk-group-heading] {
+  padding: 4px 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
 }

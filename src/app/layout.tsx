@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Achievements Lab",
-  description: "Ambient task capture and weekly focus review for founders",
+  title: "Task Capture",
+  description: "Ambient task capture with command palette",
 };
 
 export default function RootLayout({
