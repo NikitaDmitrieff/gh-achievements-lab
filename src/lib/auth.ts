@@ -1,11 +1,19 @@
-import type { User } from "@/types";
+import { NextAuthOptions } from "next-auth";
+import GithubProvider from "next-auth/providers/github";
 
-// Stub auth module. Will be replaced with NextAuth.js integration.
-export async function getSessionUser(): Promise<User | null> {
-  // In production, this will use NextAuth.js getServerSession
-  return null;
-}
-
-export function requireAuth(user: User | null): user is User {
-  return user !== null;
-}
+export const authOptions: NextAuthOptions = {
+  providers: [
+    GithubProvider({
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
+    }),
+  ],
+  callbacks: {
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.id = token.sub!;
+      }
+      return session;
+    },
+  },
+};
