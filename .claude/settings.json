@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/home/ccworker/.worktrees/gh-achievements-lab/gal-9/.claude/metadata-updater.sh",
+            "command": "/home/ccworker/.worktrees/gh-achievements-lab/gal-6/.claude/metadata-updater.sh",
             "timeout": 5000
           }
         ]
